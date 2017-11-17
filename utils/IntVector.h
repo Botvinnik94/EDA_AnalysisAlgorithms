@@ -2,6 +2,7 @@
 #define __INT_VECTOR_H
 
 #include <string.h>
+#include <stdlib.h>
 
 typedef int* IntVector;
 

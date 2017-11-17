@@ -1,3 +1,4 @@
+#include "IntVector.h"
 /**
  * Allocate a new int vector
  * @param size_t length

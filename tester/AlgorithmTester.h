@@ -2,8 +2,11 @@
 #define __ALGORITHM_TESTER_H
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+
+#ifndef __INT_VECTOR_H
+#include <stdlib.h>
+#endif
 
 #ifndef is_null
 #define is_null(a) ((a) == NULL)
@@ -32,6 +35,16 @@
 
 #ifndef MAX
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
+#endif
+
+#ifndef exit_if_wrong_args                                              
+#define exit_if_wrong_args(numberOfArgs)                                       \
+    do{                                                                        \
+        if(argc != numberOfArgs){                                              \
+            printf("Use: %s [collection_size]\n", argv[0]);                    \
+            return EXIT_FAILURE;                                               \
+        }                                                                      \
+    } while(0)                                                                                                                                                  
 #endif
 
 #ifndef ALGORITHM_TESTER_CONFIG_DEFAULT_COLLECTION_SIZE
