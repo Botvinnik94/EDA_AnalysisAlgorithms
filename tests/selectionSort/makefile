@@ -1,6 +1,6 @@
 
 selectionSort: selectionSort.c iterativeSorting.o AlgorithmTester.o IntVector.o
-	gcc -g selectionSort.c iterativeSorting.o AlgorithmTester.o IntVector.o -o bubbleSort
+	gcc -g selectionSort.c iterativeSorting.o AlgorithmTester.o IntVector.o -o selectionSort
 
 iterativeSorting.o: ../../generics/iterativeSorting.c ../../generics/iterativeSorting.h 
 	gcc -g -c ../../generics/iterativeSorting.c 
