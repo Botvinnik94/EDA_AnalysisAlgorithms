@@ -10,7 +10,7 @@
 #define TEST_RANGE 10000
 #define NUMBER_TESTS 5
 
-#define SETUP_ITERATIVE_SORTING_TEST(filePath)                                                          \
+#define SETUP_ITERATIVE_SORTING_TEST(filePath, testerFunction)                                  \
     do{                                                                                         \
         AlgorithmTesterBenchmark* benchmark;                                                    \
         AlgorithmTesterConfig* config;                                                          \
@@ -24,7 +24,7 @@
                                                                                                 \
         size = strtoul(argv[1], NULL, 10);                                                      \
                                                                                                 \
-        tester = newAlgorithmTester(testAlgorithm);                                             \
+        tester = newAlgorithmTester(testerFunction);                                            \
         config = newAlgorithmTesterConfig(size,                                                 \
                                         ALGORITHM_TESTER_CONFIG_DEFAULT_MIN_REPETITIONS,        \
                                         ALGORITHM_TESTER_CONFIG_DEFAULT_MAX_EXECUTION_TIME);    \
@@ -46,8 +46,19 @@
 
 int* iterativeSort(int* vector, size_t length);
 
-void testAlgorithm(size_t length,
+void testRandomVector(size_t length,
                    AlgorithmTesterBenchmark* benchmark,
                    void* data);
+
+void testSortedVector(size_t length,
+                      AlgorithmTesterBenchmark* benchmark,
+                      void* data);
+
+void testSortedBackwardsVector(size_t length,
+                               AlgorithmTesterBenchmark* benchmark,
+                               void* data);
+
+int cmpIntFunc (const void * a, const void * b);
+int cmpIntFuncBackwards (const void * a, const void * b);                  
 
 #endif

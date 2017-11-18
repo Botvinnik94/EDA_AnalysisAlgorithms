@@ -23,7 +23,7 @@ int* BUBBLE_SORT (int* vector, size_t length){
 
 int main(int argc, char** argv){
     
-    SETUP_ITERATIVE_SORTING_TEST("results.txt");
+    SETUP_ITERATIVE_SORTING_TEST("results.txt", testRandomVector);
 
     return EXIT_SUCCESS;
 }
