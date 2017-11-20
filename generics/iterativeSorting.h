@@ -10,6 +10,16 @@
 #define TEST_RANGE 10000
 #define NUMBER_TESTS 5
 
+#ifndef exit_if_wrong_args                                              
+#define exit_if_wrong_args(numberOfArgs)                                       \
+    do{                                                                        \
+        if(argc != numberOfArgs){                                              \
+            printf("Use: %s [collection_size]\n", argv[0]);                    \
+            return EXIT_FAILURE;                                               \
+        }                                                                      \
+    } while(0)                                                                                                                                                  
+#endif
+
 #define SETUP_ITERATIVE_SORTING_TEST(filePath, testerFunction)                                  \
     do{                                                                                         \
         AlgorithmTesterBenchmark* benchmark;                                                    \

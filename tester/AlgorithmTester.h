@@ -37,16 +37,6 @@
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #endif
 
-#ifndef exit_if_wrong_args                                              
-#define exit_if_wrong_args(numberOfArgs)                                       \
-    do{                                                                        \
-        if(argc != numberOfArgs){                                              \
-            printf("Use: %s [collection_size]\n", argv[0]);                    \
-            return EXIT_FAILURE;                                               \
-        }                                                                      \
-    } while(0)                                                                                                                                                  
-#endif
-
 #ifndef ALGORITHM_TESTER_CONFIG_DEFAULT_COLLECTION_SIZE
 #define ALGORITHM_TESTER_CONFIG_DEFAULT_COLLECTION_SIZE 1
 #endif
