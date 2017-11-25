@@ -57,7 +57,7 @@
 void iterativeSort(int* vector, size_t length);
 
 void setupIterativeSortingTest(char * filePath,
-                               char **argv,
+                               size_t size,
                                char option);
 
 void testIterativeSort(size_t length,

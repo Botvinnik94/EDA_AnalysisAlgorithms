@@ -1,7 +1,7 @@
 #include "iterativeSorting.h"
 
 void setupIterativeSortingTest(char * filePath,
-                               char **argv,
+                               size_t size,
                                char option)
 {
     AlgorithmTesterBenchmark* benchmark;                                                    
@@ -10,11 +10,8 @@ void setupIterativeSortingTest(char * filePath,
     FILE* results;
 
     int i;
-    size_t size;
     int *unsortedVector, *sortedVector, *sortedBackwardsVector;
     int *vectorToTest;
-
-    size = strtoul(argv[1], NULL, 10);
 
     tester = newAlgorithmTester(&testIterativeSort);
     config = newAlgorithmTesterConfig(size,                                                 

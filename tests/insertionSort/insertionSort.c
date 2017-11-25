@@ -20,13 +20,14 @@ void INSERTION_SORT (int* vector, size_t length){
 int main(int argc, char** argv){
 
     exit_if_wrong_args(2);
+    size_t size = strtoul(argv[1], NULL, 10);
 
     printf("Caso mejor:\n");
-    setupIterativeSortingTest("casoMejor.txt", argv, 'b');
+    setupIterativeSortingTest("casoMejor.txt", size, 'b');
     printf("Caso peor:\n");
-    setupIterativeSortingTest("casoPeor.txt", argv, 'w');
+    setupIterativeSortingTest("casoPeor.txt", size, 'w');
     printf("Caso medio:\n");
-    setupIterativeSortingTest("casoMedio.txt", argv, 'm');
+    setupIterativeSortingTest("casoMedio.txt", size, 'm');
 
     return EXIT_SUCCESS;
 }
