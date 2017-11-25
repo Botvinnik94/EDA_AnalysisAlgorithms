@@ -3,27 +3,27 @@
 #define BUBBLE_SORT iterativeSort
 
 
-int* BUBBLE_SORT (int* vector, size_t length){
-    int* sorted = IntVector_clone(vector, length);
+void BUBBLE_SORT (int* vector, size_t length){
     size_t i, j;
     int temp;
 
     for (i = 0; i < length; i++) {
         for (j = 0; j < length - i - 1; j++) {
-            if (sorted[j] > sorted[j + 1]) {
-                temp = sorted[j];
-                sorted[j] = sorted[j + 1];
-                sorted[j + 1] = temp;
+            if (vector[j] > vector[j + 1]) {
+                temp = vector[j];
+                vector[j] = vector[j + 1];
+                vector[j + 1] = temp;
             }
         }
     }
-
-    return sorted;
 }
 
 int main(int argc, char** argv){
     
-    SETUP_ITERATIVE_SORTING_TEST("results.txt", testRandomVector);
+    exit_if_wrong_args(2);
+    size_t size = strtoul(argv[1], NULL, 10);
+
+    setupIterativeSortingTest("results.txt", size, 'm');
 
     return EXIT_SUCCESS;
 }

@@ -2,32 +2,32 @@
 
 #define SELECTION_SORT iterativeSort
 
-int* SELECTION_SORT(int* vector, size_t length){
-    int *sorted = IntVector_clone(vector, length);
+void SELECTION_SORT(int* vector, size_t length){
     size_t i, j, selection;
     int temp;
 
     for(i = 0; i < length - 1; i++){
 		selection = i;
 		for(j = i+1; j < length; j++){
-			if(sorted[j] < sorted[selection])
+			if(vector[j] < vector[selection])
 				selection = j;
  		}
 
 		if(selection != i){
-            temp = sorted[selection];
-            sorted[selection] = sorted[i];
-            sorted[i] = temp;
+            temp = vector[selection];
+            vector[selection] = vector[i];
+            vector[i] = temp;
         }			
 	}
-
-    return sorted;
 }
 
 
 int main(int argc, char **argv){
     
-    SETUP_ITERATIVE_SORTING_TEST("results.txt", testRandomVector);
+    exit_if_wrong_args(2);
+    size_t size = strtoul(argv[1], NULL, 10);
+
+    setupIterativeSortingTest("results.txt", size, 'm');
 
     return EXIT_SUCCESS;
 }
