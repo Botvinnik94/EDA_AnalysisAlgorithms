@@ -7,7 +7,7 @@
 #include "../tester/AlgorithmTester.h"
 #include "../utils/IntVector.h"
 
-#define TEST_RANGE 10000
+#define TEST_RANGE 1000000
 #define NUMBER_TESTS 5
 
 #ifndef exit_if_wrong_args                                              
