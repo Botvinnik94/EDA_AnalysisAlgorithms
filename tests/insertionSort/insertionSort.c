@@ -2,8 +2,7 @@
 
 #define INSERTION_SORT iterativeSort
 
-int* INSERTION_SORT (int* vector, size_t length){
-    int *sorted = IntVector_clone(vector, length);
+void INSERTION_SORT (int* vector, size_t length){
     size_t i, j;
     int temp;
 
@@ -16,18 +15,18 @@ int* INSERTION_SORT (int* vector, size_t length){
 		}
 		vector[j+1] = temp;
 	}
-
-    return sorted;
 }
 
 int main(int argc, char** argv){
 
+    exit_if_wrong_args(2);
+
     printf("Caso mejor:\n");
-    SETUP_ITERATIVE_SORTING_TEST("casoMejor.txt", testSortedVector);
+    setupIterativeSortingTest("casoMejor.txt", argv, 'b');
     printf("Caso peor:\n");
-    SETUP_ITERATIVE_SORTING_TEST("casoPeor.txt", testSortedBackwardsVector);
+    setupIterativeSortingTest("casoPeor.txt", argv, 'w');
     printf("Caso medio:\n");
-    SETUP_ITERATIVE_SORTING_TEST("casoMedio.txt", testRandomVector);
+    setupIterativeSortingTest("casoMedio.txt", argv, 'm');
 
     return EXIT_SUCCESS;
 }

@@ -20,7 +20,7 @@
     } while(0)                                                                                                                                                  
 #endif
 
-#define SETUP_ITERATIVE_SORTING_TEST(filePath, testerFunction)                                  \
+/*#define SETUP_ITERATIVE_SORTING_TEST(filePath, testerFunction)                                  \
     do{                                                                                         \
         AlgorithmTesterBenchmark* benchmark;                                                    \
         AlgorithmTesterConfig* config;                                                          \
@@ -52,21 +52,25 @@
         fclose(results);                                                                        \
         free(config);                                                                           \
         free(tester);                                                                           \
-    } while(0)
+    } while(0)*/
 
-int* iterativeSort(int* vector, size_t length);
+void iterativeSort(int* vector, size_t length);
 
-void testRandomVector(size_t length,
+void setupIterativeSortingTest(char * filePath,
+                               char **argv,
+                               char option);
+
+void testIterativeSort(size_t length,
                    AlgorithmTesterBenchmark* benchmark,
-                   void* data);
+                   int* vector);
 
-void testSortedVector(size_t length,
+/*void testSortedVector(size_t length,
                       AlgorithmTesterBenchmark* benchmark,
                       void* data);
 
 void testSortedBackwardsVector(size_t length,
                                AlgorithmTesterBenchmark* benchmark,
-                               void* data);
+                               void* data);*/
 
 int cmpIntFunc (const void * a, const void * b);
 int cmpIntFuncBackwards (const void * a, const void * b);                  
