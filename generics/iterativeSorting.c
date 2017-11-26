@@ -24,7 +24,7 @@ void setupIterativeSortingTest(char * filePath,
         sortedVector = IntVector_clone(unsortedVector, config->collection_size);
         qsort(sortedVector, config->collection_size, sizeof(int), cmpIntFunc);
         sortedBackwardsVector = IntVector_clone(unsortedVector, config->collection_size);
-        qsort(sortedVector, config->collection_size, sizeof(int), cmpIntFuncBackwards);
+        qsort(sortedBackwardsVector, config->collection_size, sizeof(int), cmpIntFuncBackwards);
         
         switch(option){
             case 'b':
