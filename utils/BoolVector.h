@@ -7,6 +7,6 @@
 #define FALSE 0
 typedef short boolean;
 
-boolean* new_boolVector(int n);
+boolean* new_boolVector(size_t n);
 
 #endif
