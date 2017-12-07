@@ -1,6 +1,6 @@
-#include "../../generics/iterativeSorting.h"
+#include "../../generics/sortingSetup.h"
 
-#define INSERTION_SORT iterativeSort
+#define INSERTION_SORT sortAlgorithm
 
 void INSERTION_SORT (int* vector, size_t length){
     size_t i, j;
@@ -23,11 +23,11 @@ int main(int argc, char** argv){
     size_t size = strtoul(argv[1], NULL, 10);
 
     printf("Caso mejor:\n");
-    setupIterativeSortingTest("casoMejor.txt", size, 'b');
+    setupSortingTest("casoMejor.txt", size, 'b');
     printf("Caso peor:\n");
-    setupIterativeSortingTest("casoPeor.txt", size, 'w');
+    setupSortingTest("casoPeor.txt", size, 'w');
     printf("Caso medio:\n");
-    setupIterativeSortingTest("casoMedio.txt", size, 'm');
+    setupSortingTest("casoMedio.txt", size, 'm');
 
     return EXIT_SUCCESS;
 }

@@ -1,8 +1,8 @@
-#include "iterativeSorting.h"
+#include "sortingSetup.h"
 
-void setupIterativeSortingTest(char * filePath,
-                               size_t size,
-                               char option)
+void setupSortingTest(char * filePath,
+                      size_t size,
+                      char option)
 {
     AlgorithmTesterBenchmark* benchmark;                                                    
     AlgorithmTesterConfig* config;                                                          
@@ -13,7 +13,7 @@ void setupIterativeSortingTest(char * filePath,
     int *unsortedVector, *sortedVector, *sortedBackwardsVector;
     int *vectorToTest;
 
-    tester = newAlgorithmTester(&testIterativeSort);
+    tester = newAlgorithmTester(&testSortAlgorithm);
     config = newAlgorithmTesterConfig(size,                                                 
                                       ALGORITHM_TESTER_CONFIG_DEFAULT_MIN_REPETITIONS,        
                                       ALGORITHM_TESTER_CONFIG_DEFAULT_MAX_EXECUTION_TIME);
@@ -57,13 +57,13 @@ void setupIterativeSortingTest(char * filePath,
     free(tester);
 }
 
-void testIterativeSort(size_t length,
+void testSortAlgorithm(size_t length,
                        AlgorithmTesterBenchmark* benchmark,
                        int* vector)
 {
     int *sorted = IntVector_clone(vector, length);
 
-    ALGORITHM_TESTER_TEST(iterativeSort(sorted, length), benchmark);
+    ALGORITHM_TESTER_TEST(sortAlgorithm(sorted, length), benchmark);
     free(sorted);
 }
 

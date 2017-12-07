@@ -1,6 +1,6 @@
-#include "../../generics/iterativeSorting.h"
+#include "../../generics/sortingSetup.h"
 
-#define BUBBLE_SORT iterativeSort
+#define BUBBLE_SORT sortAlgorithm
 
 
 void BUBBLE_SORT (int* vector, size_t length){
@@ -23,7 +23,7 @@ int main(int argc, char** argv){
     exit_if_wrong_args(2);
     size_t size = strtoul(argv[1], NULL, 10);
 
-    setupIterativeSortingTest("results.txt", size, 'm');
+    setupSortingTest("results.txt", size, 'm');
 
     return EXIT_SUCCESS;
 }

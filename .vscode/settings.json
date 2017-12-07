@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "iterativesorting.h": "c"
+        "iterativesorting.h": "c",
+        "sortingsetup.h": "c"
     }
 }

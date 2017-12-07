@@ -1,6 +1,6 @@
-#include "../../generics/iterativeSorting.h"
+#include "../../generics/sortingSetup.h"
 
-#define SELECTION_SORT iterativeSort
+#define SELECTION_SORT sortAlgorithm
 
 void SELECTION_SORT(int* vector, size_t length){
     size_t i, j, selection;
@@ -27,7 +27,7 @@ int main(int argc, char **argv){
     exit_if_wrong_args(2);
     size_t size = strtoul(argv[1], NULL, 10);
 
-    setupIterativeSortingTest("results.txt", size, 'm');
+    setupSortingTest("results.txt", size, 'm');
 
     return EXIT_SUCCESS;
 }

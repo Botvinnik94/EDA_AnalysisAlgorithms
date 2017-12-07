@@ -1,8 +1,8 @@
-quickSort: quickSort.c iterativeSorting.o AlgorithmTester.o IntVector.o
-	gcc -g quickSort.c iterativeSorting.o AlgorithmTester.o IntVector.o -o quickSort
+quickSort: quickSort.c sortingSetup.o AlgorithmTester.o IntVector.o
+	gcc -g quickSort.c sortingSetup.o AlgorithmTester.o IntVector.o -o quickSort
 
-iterativeSorting.o: ../../generics/iterativeSorting.c ../../generics/iterativeSorting.h 
-	gcc -g -c ../../generics/iterativeSorting.c 
+sortingSetup.o: ../../generics/sortingSetup.c ../../generics/sortingSetup.h 
+	gcc -g -c ../../generics/sortingSetup.c 
 
 AlgorithmTester.o: ../../tester/AlgorithmTester.c ../../tester/AlgorithmTester.h
 	gcc -g -c ../../tester/AlgorithmTester.c

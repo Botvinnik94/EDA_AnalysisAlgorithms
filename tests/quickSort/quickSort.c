@@ -1,6 +1,6 @@
-#include "../../generics/iterativeSorting.h"
+#include "../../generics/sortingSetup.h"
 
-#define QUICK_SORT iterativeSort
+#define QUICK_SORT sortAlgorithm
 
 size_t place(int* vector, size_t length){
     size_t i, indexPivot;
@@ -32,9 +32,9 @@ int main(int argc, char** argv){
     size_t size = strtoul(argv[1], NULL, 10);
 
     printf("Caso peor:\n");
-    setupIterativeSortingTest("casoPeor.txt", size, 'b');
+    setupSortingTest("casoPeor.txt", size, 'b');
     printf("Caso medio:\n");
-    setupIterativeSortingTest("casoMedio.txt", size, 'm');
+    setupSortingTest("casoMedio.txt", size, 'm');
 
     return EXIT_SUCCESS;
 }

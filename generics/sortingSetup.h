@@ -54,13 +54,13 @@
         free(tester);                                                                           \
     } while(0)*/
 
-void iterativeSort(int* vector, size_t length);
+void sortAlgorithm(int* vector, size_t length);
 
-void setupIterativeSortingTest(char * filePath,
-                               size_t size,
-                               char option);
+void setupSortingTest(char * filePath,
+                      size_t size,
+                      char option);
 
-void testIterativeSort(size_t length,
+void testSortAlgorithm(size_t length,
                    AlgorithmTesterBenchmark* benchmark,
                    int* vector);
 
@@ -73,6 +73,7 @@ void testSortedBackwardsVector(size_t length,
                                void* data);*/
 
 int cmpIntFunc (const void * a, const void * b);
-int cmpIntFuncBackwards (const void * a, const void * b);                  
+int cmpIntFuncBackwards (const void * a, const void * b);
+void swap(int *a, int *b);            
 
 #endif

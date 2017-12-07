@@ -1,9 +1,9 @@
 
-bubbleSort: bubbleSort.c iterativeSorting.o AlgorithmTester.o IntVector.o
-	gcc -g bubbleSort.c iterativeSorting.o AlgorithmTester.o IntVector.o -o bubbleSort
+bubbleSort: bubbleSort.c sortingSetup.o AlgorithmTester.o IntVector.o
+	gcc -g bubbleSort.c sortingSetup.o AlgorithmTester.o IntVector.o -o bubbleSort
 
-iterativeSorting.o: ../../generics/iterativeSorting.c ../../generics/iterativeSorting.h 
-	gcc -g -c ../../generics/iterativeSorting.c 
+sortingSetup.o: ../../generics/sortingSetup.c ../../generics/sortingSetup.h 
+	gcc -g -c ../../generics/sortingSetup.c 
 
 AlgorithmTester.o: ../../tester/AlgorithmTester.c ../../tester/AlgorithmTester.h
 	gcc -g -c ../../tester/AlgorithmTester.c
