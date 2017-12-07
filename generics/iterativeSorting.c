@@ -102,3 +102,9 @@ int cmpIntFunc (const void * a, const void * b) {
 int cmpIntFuncBackwards (const void * a, const void * b) {
    return ( *(int*)b - *(int*)a );
 }
+
+void swap(int *a, int *b){
+    int temp = *b;
+    *b = *a;
+    *a = temp;
+}
