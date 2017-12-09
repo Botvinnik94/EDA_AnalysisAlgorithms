@@ -31,8 +31,10 @@ int main(int argc, char** argv){
     exit_if_wrong_args(2);
     size_t size = strtoul(argv[1], NULL, 10);
 
-    printf("Caso peor:\n");
-    setupSortingTest("casoPeor.txt", size, 'b');
+    printf("Vector ordenado:\n");
+    setupSortingTest("casoPeor_Ordenado.txt", size, 'b');
+    printf("Vector ordenado al reves:\n");
+    setupSortingTest("casoPeor_AlReves.txt", size, 'w');
     printf("Caso medio:\n");
     setupSortingTest("casoMedio.txt", size, 'm');
 
