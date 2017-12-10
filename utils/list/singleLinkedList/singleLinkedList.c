@@ -1,6 +1,6 @@
 #include "singleLinkedList.h"
 
-node_t* new_node(){
+node_t* SList_new_node(){
 
     node_t *Node;
 
@@ -10,7 +10,7 @@ node_t* new_node(){
     return Node;
 }
 
-SList_t* new_singleLinkedList() {
+SList_t* SList_new_singleLinkedList() {
 
     SList_t *List;
 
@@ -28,7 +28,7 @@ SList_t* new_singleLinkedList() {
     return List;
 }
 
-SList_t* slList_generateInRange(size_t size, type_t min, type_t max){
+SList_t* SList_generateInRange(size_t size, type_t min, type_t max){
     SList_t* List = new_singleLinkedList();
     return_if_null(List);
 
@@ -43,7 +43,7 @@ SList_t* slList_generateInRange(size_t size, type_t min, type_t max){
     return List;
 }
 
-void insert(type_t val, node_t* pos, SList_t* list){
+void SList_insert(type_t val, node_t* pos, SList_t* list){
 
     //TODO: error and nullPointer checking
 
@@ -56,7 +56,7 @@ void insert(type_t val, node_t* pos, SList_t* list){
     if(pos == list->last) list->last = newNode;
 }
 
-node_t* seek(type_t val, SList_t* list){
+node_t* SList_seek(type_t val, SList_t* list){
 
     return_if_null(list);
     node_t* iterator = list->first;
@@ -69,7 +69,7 @@ node_t* seek(type_t val, SList_t* list){
     return NULL;
 }
 
-void remove_pos(node_t* pos, SList_t* list){
+void SList_remove(node_t* pos, SList_t* list){
 
     //TODO: null pointer exception checking
 
@@ -80,13 +80,13 @@ void remove_pos(node_t* pos, SList_t* list){
     //TODO: update last if u kill the last node
 }
 
-void clear(SList_t* list){
+void SList_clear(SList_t* list){
 
     //TODO: null pointer exception checking
     node_t* pos = list->first;
 
     while(pos->next != NULL){
-        remove_pos(pos, list);
+        SList_remove(pos, list);
         pos = pos->next;
     }
 }
