@@ -1,8 +1,7 @@
-#ifndef __SINGLE_LINKED_LIST
-#define __SINGLE_LINKED_LIST
+#ifndef __SINGLE_LINKED_LIST_H
+#define __SINGLE_LINKED_LIST_H
 
-#include <time.h>
-#include <stdlib.h>
+#include "../../../tester/AlgorithmTester.h"
 
 #define return_if_null(exp)     if((exp) == NULL) return NULL;
 
