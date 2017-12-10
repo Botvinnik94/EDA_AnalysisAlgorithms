@@ -18,18 +18,18 @@ typedef struct slList {
     node_t* last;
 } SList_t;
 
-SList_t* slList_generateInRange(size_t size, type_t min, type_t max);
+SList_t* SList_generateInRange(size_t size, type_t min, type_t max);
 
-SList_t* new_singleLinkedList();
+SList_t* SList_new_singleLinkedList();
 
-node_t* new_node();
+node_t* SList_new_node();
 
-void insert(type_t val, node_t* pos, SList_t* list);
+void SList_insert(type_t val, node_t* pos, SList_t* list);
 
-node_t* seek(type_t val, SList_t* list);
+node_t* SList_seek(type_t val, SList_t* list);
 
-void remove_pos(node_t* pos, SList_t* list);
+void SList_remove(node_t* pos, SList_t* list);
 
-void clear(SList_t* list);
+void SList_clear(SList_t* list);
 
 #endif
