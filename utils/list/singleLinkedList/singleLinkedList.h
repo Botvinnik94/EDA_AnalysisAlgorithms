@@ -1,8 +1,12 @@
 #ifndef __SINGLE_LINKED_LIST
 #define __SINGLE_LINKED_LIST
 
-#include "../list.h"
+#include <time.h>
+#include <stdlib.h>
 
+#define return_if_null(exp)     if((exp) == NULL) return NULL;
+
+typedef int type_t;
 typedef struct node node_t;
 
 struct node{
@@ -15,8 +19,18 @@ typedef struct slList {
     node_t* last;
 } slList_t;
 
+slList_t* slList_generateInRange(size_t size, type_t min, type_t max);
+
 slList_t* new_singleLinkedList();
 
 node_t* new_node();
+
+void insert(type_t val, node_t* pos, slList_t* list);
+
+node_t* seek(type_t val, slList_t* list);
+
+void remove_pos(node_t* pos, slList_t* list);
+
+void clear(slList_t* list);
 
 #endif

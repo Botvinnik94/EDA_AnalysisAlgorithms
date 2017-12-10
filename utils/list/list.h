@@ -1,6 +1,8 @@
 #ifndef __LIST_H
 #define __LIST_H
 
+#define return_if_null(exp)     if((exp) == NULL) return NULL;
+
 #include<stdlib.h>                
 
 typedef int type_t;  //<-- Type is as default an int, I would want to make it generic tho...
