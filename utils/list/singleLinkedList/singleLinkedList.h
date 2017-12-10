@@ -16,20 +16,20 @@ struct node{
 typedef struct slList {
     node_t* first;
     node_t* last;
-} slList_t;
+} SList_t;
 
-slList_t* slList_generateInRange(size_t size, type_t min, type_t max);
+SList_t* slList_generateInRange(size_t size, type_t min, type_t max);
 
-slList_t* new_singleLinkedList();
+SList_t* new_singleLinkedList();
 
 node_t* new_node();
 
-void insert(type_t val, node_t* pos, slList_t* list);
+void insert(type_t val, node_t* pos, SList_t* list);
 
-node_t* seek(type_t val, slList_t* list);
+node_t* seek(type_t val, SList_t* list);
 
-void remove_pos(node_t* pos, slList_t* list);
+void remove_pos(node_t* pos, SList_t* list);
 
-void clear(slList_t* list);
+void clear(SList_t* list);
 
 #endif

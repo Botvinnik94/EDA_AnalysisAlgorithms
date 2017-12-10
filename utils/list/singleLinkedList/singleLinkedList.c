@@ -10,11 +10,11 @@ node_t* new_node(){
     return Node;
 }
 
-slList_t* new_singleLinkedList() {
+SList_t* new_singleLinkedList() {
 
-    slList_t *List;
+    SList_t *List;
 
-    List = malloc(sizeof(slList_t));
+    List = malloc(sizeof(SList_t));
     return_if_null(List);
 
     List->first = new_node();
@@ -28,8 +28,8 @@ slList_t* new_singleLinkedList() {
     return List;
 }
 
-slList_t* slList_generateInRange(size_t size, type_t min, type_t max){
-    slList_t* List = new_singleLinkedList();
+SList_t* slList_generateInRange(size_t size, type_t min, type_t max){
+    SList_t* List = new_singleLinkedList();
     return_if_null(List);
 
     size_t i;
@@ -43,7 +43,7 @@ slList_t* slList_generateInRange(size_t size, type_t min, type_t max){
     return List;
 }
 
-void insert(type_t val, node_t* pos, slList_t* list){
+void insert(type_t val, node_t* pos, SList_t* list){
 
     //TODO: error and nullPointer checking
 
@@ -56,7 +56,7 @@ void insert(type_t val, node_t* pos, slList_t* list){
     if(pos == list->last) list->last = newNode;
 }
 
-node_t* seek(type_t val, slList_t* list){
+node_t* seek(type_t val, SList_t* list){
 
     return_if_null(list);
     node_t* iterator = list->first;
@@ -69,7 +69,7 @@ node_t* seek(type_t val, slList_t* list){
     return NULL;
 }
 
-void remove_pos(node_t* pos, slList_t* list){
+void remove_pos(node_t* pos, SList_t* list){
 
     //TODO: null pointer exception checking
 
@@ -80,7 +80,7 @@ void remove_pos(node_t* pos, slList_t* list){
     //TODO: update last if u kill the last node
 }
 
-void clear(slList_t* list){
+void clear(SList_t* list){
 
     //TODO: null pointer exception checking
     node_t* pos = list->first;
