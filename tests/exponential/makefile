@@ -1,8 +1,8 @@
 iterativeExponential: iterativeExponential.c exponential.o AlgorithmTester.o
-	gcc -g iterativeExponential.c AlgorithmTester.o -o iterativeExponential
+	gcc -g iterativeExponential.c exponential.o AlgorithmTester.o -o iterativeExponential
 
 recursiveExponential: recursiveExponential.c exponential.o AlgorithmTester.o
-	gcc -g recursiveExponential.c AlgorithmTester.o -o recursiveExponential
+	gcc -g recursiveExponential.c exponential.o AlgorithmTester.o -o recursiveExponential
 
 exponential.o: ../../generics/exponential.c ../../generics/exponential.h
 	gcc -g -c ../../generics/exponential.c

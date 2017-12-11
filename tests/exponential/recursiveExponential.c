@@ -9,8 +9,10 @@ long exponentialAlgorithm(int base, size_t exponent){
     else if(IS_ODD_NUMBER(exponent))
         return base * exponentialAlgorithm(base, exponent-1);
 
-    else
-        return exponentialAlgorithm(base, exponent/2) * exponentialAlgorithm(base, exponent/2);
+    else {
+        long result = exponentialAlgorithm(base, exponent/2); 
+        return result * result;
+    }
 }
 
 int main(int argc, char **argv){
