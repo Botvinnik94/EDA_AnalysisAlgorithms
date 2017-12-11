@@ -9,4 +9,6 @@ typedef short boolean;
 
 boolean* new_boolVector(size_t n);
 
+boolean* BoolVector_clone(boolean* vector, size_t length);
+
 #endif
