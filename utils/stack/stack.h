@@ -16,12 +16,12 @@ Stack_t* new_Stack();
 
 #define Stack_top(stack)			stack->top
 
-void Stack_remove(Stack s);
+void Stack_remove(Stack_t s);
 
-void Stack_push(type_t val, Stack s);
+void Stack_push(type_t val, Stack_t s);
 
-type_t Stack_pull(Stack s);
+type_t Stack_pull(Stack_t s);
 
-bool isEmpty(Stack s);
+bool isEmpty(Stack_t s);
 
 #endif
