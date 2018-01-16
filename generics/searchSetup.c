@@ -9,7 +9,7 @@ void setupSearchTest(char * filePath,
     AlgorithmTester* tester;                                                              
     FILE* results;
 
-    int i;
+    int i, indexToFind;
     
     searchElements elements;  
 
@@ -19,27 +19,27 @@ void setupSearchTest(char * filePath,
                                       ALGORITHM_TESTER_CONFIG_DEFAULT_MAX_EXECUTION_TIME);
     results = fopen(filePath,"w");
 
+    elements.vector = IntVector__generateInRange(config->collection_size, 0, TEST_RANGE);
+    qsort(elements.vector, config->collection_size, sizeof(int), cmpIntFunc);
+    elements.length = config->collection_size; 
 
-
-    for(i = 0; i < NUMBER_TESTS; i++){
-        elements.vector = IntVector__generateInRange(config->collection_size, 0, TEST_RANGE);
-        qsort(elements.vector, config->collection_size, sizeof(int), cmpIntFunc);
-        elements.length = config->collection_size; 
-
-        switch(option){
+    switch(option){
             case 'b':
-                
+                    
                 break;
 
             case 'w':
-                elements.toFind = elements.vector[elements.length - 1];
+                indexToFind = elements.length - 1;
+                elements.toFind = elements.vector[indexToFind];
                 break;
-            
+                
             case 'm':
-                elements.toFind = IntVector__randomInt(0, TEST_RANGE);
+                indexToFind = IntVector__randomInt(0, elements.length);
+                elements.toFind = elements.vector[indexToFind];
                 break;
-        }
+    }
 
+    for(i = 0; i < NUMBER_TESTS; i++){
         benchmark = AlgorithmTester_test(tester, config, &elements);                             
         AlgorithmTesterBenchmark_toConsole(benchmark);                                      
         AlgorithmTesterBenchmark_toStreamDelimited(benchmark, results, ';');  
@@ -48,6 +48,10 @@ void setupSearchTest(char * filePath,
         free(elements.vector);
                                                                                                                                                                          
         config->collection_size *= 2; 
+        elements.vector = IntVector__generateInRange(config->collection_size, 0, TEST_RANGE);
+        qsort(elements.vector, config->collection_size, sizeof(int), cmpIntFunc);
+        elements.length = config->collection_size;
+        elements.toFind = elements.vector[(indexToFind*2)+1];
     }
 
     fclose(results);

@@ -2,10 +2,11 @@
 #define __ALGORITHM_TESTER_H
 
 #include <stdio.h>
-#include <time.h>
+
 
 #ifndef __INT_VECTOR_H
 #include <stdlib.h>
+#include <time.h>
 #endif
 
 #ifndef is_null
