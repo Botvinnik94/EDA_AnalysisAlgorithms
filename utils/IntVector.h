@@ -25,6 +25,7 @@ IntVector newIntVector(size_t length);
  */
 IntVector IntVector__generateInRange(size_t length, int min, int max);
 
+int IntVector__randomInt(int min, int max);
 /**
  * Clone an int vector
  *

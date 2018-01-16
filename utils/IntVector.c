@@ -26,16 +26,26 @@ IntVector newIntVector(size_t length) {
  */
 IntVector IntVector__generateInRange(size_t length, int min, int max) {
     IntVector ret = newIntVector(length);
-    int range = max - min;
     size_t i = 0;
 
     // return_null_if(range < 0);
 
     for (; i < length; i++) {
-        ret[i] = min + (rand() % range);
+        ret[i] = IntVector__randomInt(min, max);
     }
 
     return ret;
+}
+
+/**
+ * Returns a random integer.
+ *
+ */
+int IntVector__randomInt(int min, int max){
+    int range = max - min;
+
+    srand(time(NULL));
+    return (min + (rand() % range));
 }
 
 /**
